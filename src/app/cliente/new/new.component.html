@@ -1,0 +1,63 @@
+<h1 class="text-primary text-center">
+  NUEVO CLIENTE
+</h1>
+<div class="row justify-content-start m-5">
+  <div class="col-8">
+
+    <div class="form-group row">
+      <div class="col-4">
+        <label for="" class="float-right">
+          CEDULA
+        </label>
+      </div>
+      <div class="col-8">
+        <input type="text" class="form-control" [(ngModel)]="cliente.cedula">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-4">
+        <label for="" class="float-right">
+          NOMBRES
+        </label>
+      </div>
+      <div class="col-8">
+        <input type="text" class="form-control" [(ngModel)]="cliente.nombre">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-4">
+        <label for="" class="float-right">
+          APELLIDO
+        </label>
+      </div>
+      <div class="col-8">
+        <input type="text" class="form-control" [(ngModel)]="cliente.apellido">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-4">
+        <label for="" class="float-right">
+          FECHA DE NAC.
+        </label>
+      </div>
+      <div class="col-8">
+        <input type="date" class="form-control" [(ngModel)]="cliente.fechaNacimiento">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-4">
+        <label for="" class="float-right" >
+          NRO. HIJOS
+        </label>
+      </div>
+      <div class="col-8">
+        <input type="number" class="form-control" [(ngModel)]="cliente.nHijos" min="0" >
+      </div>
+    </div>
+    <div class="form-group row justify-content-end">
+      <div class="col-6">
+        <button class="btn btn-info btn-block" (click)="enviar()">GUARDAR</button>
+      </div>
+    </div>
+  </div>
+</div>

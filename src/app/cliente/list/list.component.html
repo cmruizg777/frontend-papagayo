@@ -1,0 +1,38 @@
+<table class="table table-bordered m-2">
+  <thead>
+    <th>ACCIONES</th>
+    <th>CEDULA</th>
+    <th>NOMBRES</th>
+    <th>APELLIDOS</th>
+    <th>FECHA DE NAC.</th>
+    <th>ACTIVO</th>
+    <th>HIJOS</th>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>
+        <button class="btn btn-sm btn-warning">
+          <i class="fa fa-edit"></i>
+        </button>
+        <button class="btn btn-sm btn-danger">
+          <i class="fa fa-times"></i>
+        </button>
+      </td>
+      <td>{{cliente.cedula}}</td>
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.apellido}}</td>
+      <td>{{cliente.fechaNacimiento}}</td>
+      <ng-container *ngIf="cliente.esFrecuente; else elseTemplate">
+        <td >SI</td>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <td >NO</td>
+      </ng-template>
+
+
+      <td>{{$any(cliente.nHijos)}}</td>
+
+    </tr>
+  </tbody>
+</table>
