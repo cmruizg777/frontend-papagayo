@@ -6,13 +6,15 @@ import { ListComponent } from './list/list.component';
 import { DeleteComponent } from './delete/delete.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CsvComponent } from './csv/csv.component';
 
 
 const routes: Routes = [
   { path: '', component: ListComponent },
   { path: 'new', component: NewComponent },
   { path: 'update/:id', component: UpdateComponent },
-  { path: 'delete/:id', component: DeleteComponent }
+  { path: 'delete/:id', component: DeleteComponent },
+  { path: 'csv', component: CsvComponent }
 ];
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ const routes: Routes = [
     UpdateComponent,
     ListComponent,
     DeleteComponent,
+    CsvComponent,
   ],
   imports: [
     CommonModule,

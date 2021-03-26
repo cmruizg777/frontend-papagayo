@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiRequestService } from 'src/app/services/api-request.service';
 
 @Component({
   selector: 'app-delete',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
+  
+  @Input() cedula: string = '';
 
-  constructor() { }
+  constructor(private api: ApiRequestService) { }
 
   ngOnInit(): void {
+    
+  }
+  eliminar(){
+    this.api.borrarCliente(this.cedula).subscribe(()=>{
+      location.reload();
+    })
   }
 
 }

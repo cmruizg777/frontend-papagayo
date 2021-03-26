@@ -1,4 +1,4 @@
-<table class="table table-bordered m-2">
+<table class="table table-bordered  table-responsive m-2">
   <thead>
     <th>ACCIONES</th>
     <th>CEDULA</th>
@@ -12,12 +12,10 @@
   <tbody>
     <tr *ngFor="let cliente of clientes">
       <td>
-        <button class="btn btn-sm btn-warning">
+        <button [routerLink]="'/cliente/update/'+cliente.cedula" class="btn btn-sm btn-warning">
           <i class="fa fa-edit"></i>
         </button>
-        <button class="btn btn-sm btn-danger">
-          <i class="fa fa-times"></i>
-        </button>
+        <app-delete [cedula]="cliente.cedula"></app-delete>
       </td>
       <td>{{cliente.cedula}}</td>
       <td>{{cliente.nombre}}</td>
